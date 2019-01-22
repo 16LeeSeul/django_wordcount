@@ -1,0 +1,118 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Count Words!!!</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 4 Mobile App Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="cssfile.css" media="screen and (min-width: 512px) and (max-width: 1024px)" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700|Nunito:400,600,700" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href='{% static "nova-free/assets/plugins/jquery-flipster/dist/jquery.flipster.min.css" %}'>
+    
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href='{% static "nova-free/assets/css/theme.css" %}'>
+
+</head> 
+
+<body>
+    
+    <header class="header">
+	    
+        <div class="branding">
+            
+            <div class="container position-relative">
+
+				<nav class="navbar navbar-expand-lg" >
+                    <h1 class="site-logo"><a class="navbar-brand" href="{%url 'home'%}"><img class="logo-icon" src='{% static "nova-free/assets/images/logo-icon.svg" %}' alt="logo"> <span class="logo-text">Home</span></a></h1>
+				</nav>
+				
+				<!-- // Free Version ONLY -->
+				<ul class="social-list list-inline mb-0 position-absolute">
+                        <h1 class="site-logo"><a class="navbar-brand" href="{%url 'about'%}"> <span class="logo-text">About</span></a></h1>
+	            </ul><!--//social-list-->
+	            
+            </div><!--//container-->
+            
+        </div><!--//branding-->
+        
+        
+    </header><!--//header-->
+
+
+   
+<section class="features-section py-5">
+	    <div class="container py-lg-5">
+            <h3 class="mb-3 text-center font-weight-bold section-heading">당신이 입력한 텍스트는 {{total}} 단어로 구성되어 있습니다.</h3>
+            
+		    <div class="row">
+                    <div class="col-12 col-md-6 col-xl-5 order-md-2 pr-xl-3 d-none d-md-block">
+                        <img class="product-figure product-figure-2 img-fluid" src="wordcount/static/nova-free/assets/images/product-figure-2.png" alt="" />
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-5 order-md-1 offset-xl-1 pt-xl-5">
+                        <div class="card rounded border-0 shadow-lg  mb-5">
+                            <div class="card-body p-4">
+                                <h5 class="card-title"><i class="far fa-chart-bar mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>Input text</h5>
+                                <p class="card-text">{{full}}</p>
+                            </div>
+                        </div><!--//card-->
+                    </div>
+<!--                    
+                </div>
+
+		    <div class="row pt-5 mb-5"> -->
+			    
+			    <div class="col-12 col-md-6 col-xl-5 offset-xl-1 d-none d-md-block">
+				    <img class="product-figure product-figure-1 img-fluid" src="wordcount/static/nova-free/assets/images/product-figure-1.png" alt="" />
+			    </div>
+			    
+		        <div class="col-12 col-md-6 col-xl-5 pr-xl-3 pt-md-3">				    
+				    <div class="card rounded border-0 shadow-lg mb-5">
+					    <div class="card-body p-4">
+							<h5 class="card-title"><i class="fas fa-laptop-code mr-2 mr-lg-3 text-primary fa-lg fa-fw"></i>Word Counter</h5>
+							<p class="card-text">    
+                                {% for word, howmany in dictionary %}
+                                    {{word}} : {{howmany}} <br>
+                                {%endfor%}</p>
+						</div>
+				    </div><!--//card-->
+			    </div>
+			    
+			    
+		    </div>
+		    
+
+		    
+		    <div class="pt-5 text-center">
+			    <a class="btn btn-primary theme-btn theme-btn-ghost font-weight-bold" href="{%url 'home'%}">다시 해보기</a>
+		    </div>
+	    </div><!--//container-->
+	    
+    </section><!--//features-section-->
+
+
+
+    <!-- Javascript -->          
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/jquery-3.3.1.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/popper.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/bootstrap/js/bootstrap.min.js" %}'></script>  
+    
+    <!-- Page Specific JS -->
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/jquery-flipster/dist/jquery.flipster.min.js" %}'></script> 
+    <script type="text/javascript" src='{% static "nova-free/assets/js/flipster-custom.js" %}'></script> 
+
+
+</body>
+</html> 

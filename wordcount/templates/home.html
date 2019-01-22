@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Count Words!!!</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 4 Mobile App Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="cssfile.css" media="screen and (min-width: 512px) and (max-width: 1024px)" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700|Nunito:400,600,700" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+    
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href='{% static "nova-free/assets/plugins/jquery-flipster/dist/jquery.flipster.min.css" %}'>
+    
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href='{% static "nova-free/assets/css/theme.css" %}'>
+
+</head> 
+
+<body>
+    
+    <header class="header">
+	    
+        <div class="branding">
+            
+            <div class="container position-relative">
+
+				<nav class="navbar navbar-expand-lg" >
+                    <h1 class="site-logo"><a class="navbar-brand" href="{%url 'home'%}"><img class="logo-icon" src='{% static "nova-free/assets/images/logo-icon.svg" %}' alt="logo"> <span class="logo-text">Home</span></a></h1>
+				</nav>
+				
+				<!-- // Free Version ONLY -->
+				<ul class="social-list list-inline mb-0 position-absolute">
+                        <h1 class="site-logo"><a class="navbar-brand" href="{%url 'about'%}"> <span class="logo-text">About</span></a></h1>
+	            </ul><!--//social-list-->
+	            
+            </div><!--//container-->
+            
+        </div><!--//branding-->
+        
+        
+    </header><!--//header-->
+    
+    
+    <section class="hero-section">
+	    <div class="container">
+		    <div class="row figure-holder">
+			    <div class="col-12 col-md-6 pt-3 pt-md-4">
+				    <h2 class="site-headline font-weight-bold mt-lg-5 pt-lg-5">Count the words!!!!</h2>
+				    <div class="site-tagline mb-3">Get started now!</div>
+				    <div class="cta-btns">
+                        <form action="{%url 'result'%}">
+                            <textarea cols= 60%; rows=10%; name="fulltext"></textarea>
+                            <br><br>
+                            <!-- 제출 버튼 -->
+                            <input class="btn btn-primary theme-btn theme-btn-ghost font-weight-bold" type="submit" value="count">
+                            <br><br>
+                        </form>
+				    </div>
+			    </div>
+		    </div><!--//row-->
+	    </div>
+    </section><!--//hero-section-->
+   
+    
+    <footer class="footer theme-bg-primary">
+	  
+
+	    <div class="footer-bottom text-center pb-5">
+	        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+	    </div>
+		
+    </footer>
+
+       
+    <!-- Javascript -->          
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/jquery-3.3.1.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/popper.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/bootstrap/js/bootstrap.min.js" %}'></script>  
+    
+    <!-- Page Specific JS -->
+    <script type="text/javascript" src='{% static "nova-free/assets/plugins/jquery-flipster/dist/jquery.flipster.min.js" %}'></script> 
+    <script type="text/javascript" src='{% static "nova-free/assets/js/flipster-custom.js" %}'></script> 
+
+
+</body>
+</html> 
+
